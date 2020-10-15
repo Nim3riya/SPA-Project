@@ -1,5 +1,5 @@
-import React from 'react';
-import a from './MyPost.module.css';
+import React from "react";
+import a from "./MyPost.module.css";
 const MyPost = () => {
     return <div>
         <div className={a.item}>

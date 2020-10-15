@@ -1,17 +1,17 @@
-import React from 'react';
-import a from './MyPosts.module.css';
+import React from "react";
+import a from "./MyPosts.module.css";
 import MyPost from "./MyPost/MyPost";
 
 
 const MyPosts = () => {
     return <div className={a.postsBlock}>
-        <h3> My post </h3>
+        <h3> Мой пост </h3>
         <div>
             <div>
-                <textarea placeholder='Add text'/>
+                <textarea placeholder='Напишите текст'/>
             </div>
             <div>
-                <button>add post</button>
+                <button>Добавьте пост</button>
             </div>
         </div>
         <div className={a.post}>

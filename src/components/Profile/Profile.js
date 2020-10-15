@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = (props) => {
