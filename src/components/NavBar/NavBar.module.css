@@ -3,3 +3,10 @@
     background-color: beige;
     padding: 20px;
 }
+.item a {
+    color: lightpink;
+    text-decoration: none;
+}
+.item a.active {
+    color: brown;
+}
