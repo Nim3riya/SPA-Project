@@ -16,6 +16,7 @@
     margin: 10px;
     padding: 10px;
 }
-.messages .message{
 
+.item a.active {
+    color: brown;
 }
