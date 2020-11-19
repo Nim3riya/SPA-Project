@@ -1,7 +1,7 @@
 import React from "react";
 import a from "./MyPosts.module.css";
 import MyPost from "./MyPost/MyPost";
-import {addPostAC, updateTextAC} from "../../../redux/state";
+import {addPostAC, updateTextAC} from "../../../redux/profileReducer";
 
 const MyPosts = (props) => {
     let postElements = props.postData.map((el) => {
@@ -26,6 +26,7 @@ const MyPosts = (props) => {
                 <textarea value={props.newText}
                           onChange={onPostChange}
                           ref={newPostElement}
+                          placeholder="Введите текст"
                 />
             </div>
             <div>

@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST',
-    UPDATE_TEXT = 'UPDATE-TEXT';
+import profileReducer from "./profileReducer";
+import dialogReducer from "./dialodsReducer";
 
 const store = {
     _state: {
@@ -8,7 +8,7 @@ const store = {
                 {id: 1, message: 'Хочу лето и тепло', like: 1},
                 {id: 2, message: 'Люблю осеннюю погоду', like: 2}
             ],
-            newTextPost: 'Введите текст'
+            newTextPost: ''
         },
         dialogsPage: {
             dialogData: [
@@ -19,6 +19,7 @@ const store = {
                 {id: 1, message: 'Привет'},
                 {id: 2, message: 'Как дела?'}
             ],
+            newMessageBody: ""
         }
     },
     _callSubscriber() {
@@ -48,26 +49,11 @@ const store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newTextPost,
-                likesCount: 0
-            };
-            this._state.profilePage.postData.push((newPost));
-            this._state.profilePage.newTextPost = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_TEXT) {
-            this._state.profilePage.newTextPost = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action);
+        this._callSubscriber(this._state)
     }
 };
-
-export const addPostAC = () => ({type: ADD_POST});
-export const updateTextAC = (text) => ({
-   type: UPDATE_TEXT, newText: text
-});
 
 window.store = store;
 export default store;
