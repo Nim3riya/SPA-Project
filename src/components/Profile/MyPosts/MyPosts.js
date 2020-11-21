@@ -3,8 +3,8 @@ import a from "./MyPosts.module.css";
 import MyPost from "./MyPost/MyPost";
 
 const MyPosts = (props) => {
-    let postElements = props.postData.map((el) => {
-        return <MyPost message={el.message} id={el.id} like={el.likesCount}/>
+    let postElements = props.profilePage.postData.map((el) => {
+        return <MyPost key={el.id} message={el.message} id={el.id} like={el.likesCount}/>
     });
 
     let newPostElement = React.createRef();
